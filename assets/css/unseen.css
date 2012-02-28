@@ -2,11 +2,23 @@
     Document   : unseen
     Created on : 28/02/2012, 11:01:35 AM
     Author     : Simon Elvery
-    Description: Demonstration of the responsive tables method described at 
-				 http://www.irishstu.com/stublog/2011/12/13/tables-responsive-design-part-2-nchilds/
-				 and
-				 http://filamentgroup.com/lab/responsive_design_approach_for_complex_multicolumn_data_tables/
+    Description: 
+		Demonstration of the responsive tables method described at 
+		http://www.irishstu.com/stublog/2011/12/13/tables-responsive-design-part-2-nchilds/
+		and
+		http://filamentgroup.com/lab/responsive_design_approach_for_complex_multicolumn_data_tables/
 */
 
-#unseen 
+@media only screen and (max-width: 800px) {
+	#unseen table td:nth-child(2), 
+	#unseen table th:nth-child(2) {display: none;}
+}
 
+@media only screen and (max-width: 640px) {
+	#unseen table td:nth-child(4),
+	#unseen table th:nth-child(4),
+	#unseen table td:nth-child(7),
+	#unseen table th:nth-child(7),
+	#unseen table td:nth-child(8),
+	#unseen table th:nth-child(8){display: none;}
+}
