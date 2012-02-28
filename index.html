@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<base href="/playground/responsive-tables/"><!--[if lte IE 6]></base><![endif]-->
+    <meta charset="utf-8">
+    <title>Responsive Tables Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A demo of some techniques for developing responsive tables.">
+    <meta name="author" content="Simon Elvery">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+	  
+	  table {
+		  width: 100%;
+	  }
+	  
+	  td {white-space: nowrap;}
+	  td, th {text-align: left;}
+	  td.numeric, th.numeric { text-align: right; }
+    </style>
+    <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="assets/css/unseen.css" rel="stylesheet">
+	<link href="assets/css/flip-scroll.css" rel="stylesheet">
+	<link href="assets/css/no-more-tables.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top" id="top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#top">Responsive Tables</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#unseen">The Unseen Column</a></li>
+              <li><a href="#flip-scroll">Flip Scroll</a></li>
+			  <li><a href="#no-more-tables">No More Tables</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+
+      <h1>Responsive Tables Demo</h1>
+      <p>A quick and dirty look at some techniques for designing responsive table layouts.</p>
+	  
+	  <section id="unseen">
+		  <h2>The Unseen Column</h2>
+		  <p></p>
+		  <table class="table-bordered table-striped table-condensed">
+			  <thead>
+				  <tr>
+					  <th class="essential">Code</th>
+					  <th>Company</th>
+					  <th class="numeric">Price</th>
+					  <th class="numeric">Change</th>
+					  <th class="numeric">Change %</th>
+					  <th class="numeric">Open</th>
+					  <th class="numeric">High</th>
+					  <th class="numeric">Low</th>
+					  <th class="numeric">Volume</th>
+				  </tr>
+			  </thead>
+				<tbody>
+					<tr>
+						<td class="essential">AAC</td>
+						<td>AUSTRALIAN AGRICULTURAL COMPANY LIMITED.</td>
+						<td class="numeric">$1.38</td>
+						<td class="numeric">-0.01</td>
+						<td class="numeric">-0.36%</td>
+						<td class="numeric">$1.39</td>
+						<td class="numeric">$1.39</td>
+						<td class="numeric">$1.38</td>
+						<td class="numeric">9,395</td>
+					</tr>
+					<tr>
+						<td class="essential">AAD</td>
+						<td>ARDENT LEISURE GROUP</td>
+						<td class="numeric">$1.15</td>
+						<td class="numeric">  +0.02</td>
+						<td class="numeric">1.32%</td>
+						<td class="numeric">$1.14</td>
+						<td class="numeric">$1.15</td>
+						<td class="numeric">$1.13</td>
+						<td class="numeric">56,431</td>
+					</tr>
+					<tr>
+						<td class="essential">AAX</td>
+						<td>AUSENCO LIMITED</td>
+						<td class="numeric">$4.00</td>
+						<td class="numeric">-0.04</td>
+						<td class="numeric">-0.99%</td>
+						<td class="numeric">$4.01</td>
+						<td class="numeric">$4.05</td>
+						<td class="numeric">$4.00</td>
+						<td class="numeric">90,641</td>
+					</tr>
+					<tr>
+						<td class="essential">ABC</td>
+						<td>ADELAIDE BRIGHTON LIMITED</td>
+						<td class="numeric">$3.00</td>
+						<td class="numeric">  +0.06</td>
+						<td class="numeric">2.04%</td>
+						<td class="numeric">$2.98</td>
+						<td class="numeric">$3.00</td>
+						<td class="numeric">$2.96</td>
+						<td class="numeric">862,518</td>
+					</tr>
+					<tr>
+						<td class="essential">ABP</td>
+						<td>ABACUS PROPERTY GROUP</td>
+						<td class="numeric">$1.91</td>
+						<td class="numeric">0.00</td>
+						<td class="numeric">0.00%</td>
+						<td class="numeric">$1.92</td>
+						<td class="numeric">$1.93</td>
+						<td class="numeric">$1.90</td>
+						<td class="numeric">595,701</td>
+					</tr>
+					<tr>
+						<td class="essential">ABY</td>
+						<td>ADITYA BIRLA MINERALS LIMITED</td>
+						<td class="numeric">$0.77</td>
+						<td class="numeric">  +0.02</td>
+						<td class="numeric">2.00%</td>
+						<td class="numeric">$0.76</td>
+						<td class="numeric">$0.77</td>
+						<td class="numeric">$0.76</td>
+						<td class="numeric">54,567</td>
+					</tr>
+					<tr>
+						<td class="essential">ACR</td>
+						<td>ACRUX LIMITED</td>
+						<td class="numeric">$3.71</td>
+						<td class="numeric">  +0.01</td>
+						<td class="numeric">0.14%</td>
+						<td class="numeric">$3.70</td>
+						<td class="numeric">$3.72</td>
+						<td class="numeric">$3.68</td>
+						<td class="numeric">191,373</td>
+					</tr>
+					<tr>
+						<td class="essential">ADU</td>
+						<td>ADAMUS RESOURCES LIMITED</td>
+						<td class="numeric">$0.72</td>
+						<td class="numeric">0.00</td>
+						<td class="numeric">0.00%</td>
+						<td class="numeric">$0.73</td>
+						<td class="numeric">$0.74</td>
+						<td class="numeric">$0.72</td>
+						<td class="numeric">8,602,291</td>
+					</tr>
+					<tr>
+						<td class="essential">AGG</td>
+						<td>ANGLOGOLD ASHANTI LIMITED</td>
+						<td class="numeric">$7.81</td>
+						<td class="numeric">-0.22</td>
+						<td class="numeric">-2.74%</td>
+						<td class="numeric">$7.82</td>
+						<td class="numeric">$7.82</td>
+						<td class="numeric">$7.81</td>
+						<td class="numeric">148</td>
+					</tr>
+					<tr>
+						<td class="essential">AGK</td>
+						<td>AGL ENERGY LIMITED</td>
+						<td class="numeric">$13.82</td>
+						<td class="numeric">  +0.02</td>
+						<td class="numeric">0.14%</td>
+						<td class="numeric">$13.83</td>
+						<td class="numeric">$13.83</td>
+						<td class="numeric">$13.67</td>
+						<td class="numeric">846,403</td>
+					</tr>
+					<tr>
+						<td class="essential">AGO</td>
+						<td>ATLAS IRON LIMITED</td>
+						<td class="numeric">$3.17</td>
+						<td class="numeric">-0.02</td>
+						<td class="numeric">-0.47%</td>
+						<td class="numeric">$3.11</td>
+						<td class="numeric">$3.22</td>
+						<td class="numeric">$3.10</td>
+						<td class="numeric">5,416,303</td>
+					</tr>
+					<tr>
+						<td>AGS</td>
+						<td>ALLIANCE RESOURCES LIMITED</td>
+						<td class="numeric">$0.49</td>
+						<td class="numeric">-0.01</td>
+						<td class="numeric">-2.02%</td>
+						<td class="numeric">$0.51</td>
+						<td class="numeric">$0.51</td>
+						<td class="numeric">$0.48</td>
+						<td class="numeric">404,139</td>
+					</tr>
+					<tr>
+						<td>AHD</td>
+						<td>AMALGAMATED HOLDINGS LIMITED</td>
+						<td class="numeric">$5.93</td>
+						<td class="numeric">0.00</td>
+						<td class="numeric">0.00%</td>
+						<td class="numeric">$5.93</td>
+						<td class="numeric">$5.93</td>
+						<td class="numeric">$5.93</td>
+						<td class="numeric">750</td>
+					</tr>
+					<tr>
+						<td>AHE</td>
+						<td>AUTOMOTIVE HOLDINGS GROUP LIMITED</td>
+						<td class="numeric">$2.44</td>
+						<td class="numeric">  +0.12</td>
+						<td class="numeric">5.17%</td>
+						<td class="numeric">$2.35</td>
+						<td class="numeric">$2.44</td>
+						<td class="numeric">$2.34</td>
+						<td class="numeric">79,817</td>
+					</tr>
+					<tr>
+						<td>AIO</td>
+						<td>ASCIANO LIMITED</td>
+						<td class="numeric">$4.92</td>
+						<td class="numeric">  +0.05</td>
+						<td class="numeric">1.03%</td>
+						<td class="numeric">$4.88</td>
+						<td class="numeric">$4.92</td>
+						<td class="numeric">$4.87</td>
+						<td class="numeric">1,453,786</td>
+					</tr>
+					<tr>
+						<td>AIX</td>
+						<td>AUSTRALIAN INFRASTRUCTURE FUND</td>
+						<td class="numeric">$2.05</td>
+						<td class="numeric">-0.02</td>
+						<td class="numeric">-0.73%</td>
+						<td class="numeric">$2.06</td>
+						<td class="numeric">$2.06</td>
+						<td class="numeric">$2.03</td>
+						<td class="numeric">225,671</td>
+					</tr>
+					<tr>
+						<td>AJA</td>
+						<td>ASTRO JAPAN PROPERTY GROUP</td>
+						<td class="numeric">$2.01</td>
+						<td class="numeric">0.00</td>
+						<td class="numeric">0.00%</td>
+						<td class="numeric">$2.00</td>
+						<td class="numeric">$2.02</td>
+						<td class="numeric">$2.00</td>
+						<td class="numeric">8,566</td>
+					</tr>
+					<tr>
+						<td>AJL</td>
+						<td>AJ LUCAS GROUP LIMITED</td>
+						<td class="numeric">$1.20</td>
+						<td class="numeric">0.00</td>
+						<td class="numeric">0.00%</td>
+						<td class="numeric">$1.20</td>
+						<td class="numeric">$1.21</td>
+						<td class="numeric">$1.05</td>
+						<td class="numeric">143,485</td>
+					</tr>
+					<tr>
+						<td>ALL</td>
+						<td>ARISTOCRAT LEISURE LIMITED</td>
+						<td class="numeric">$2.92</td>
+						<td class="numeric">  +0.38</td>
+						<td class="numeric">14.96%</td>
+						<td class="numeric">$2.79</td>
+						<td class="numeric">$2.95</td>
+						<td class="numeric">$2.71</td>
+						<td class="numeric">2,629,329</td>
+					</tr>
+					<tr>
+						<td>ALS</td>
+						<td>ALESCO CORPORATION LIMITED</td>
+						<td class="numeric">$1.38</td>
+						<td class="numeric">-0.02</td>
+						<td class="numeric">-1.08%</td>
+						<td class="numeric">$1.39</td>
+						<td class="numeric">$1.39</td>
+						<td class="numeric">$1.37</td>
+						<td class="numeric">5,283</td>
+					</tr>
+					<tr>
+						<td>ALZ</td>
+						<td>AUSTRALAND PROPERTY GROUP</td>
+						<td class="numeric">$2.66</td>
+						<td class="numeric">  +0.01</td>
+						<td class="numeric">0.19%</td>
+						<td class="numeric">$2.65</td>
+						<td class="numeric">$2.67</td>
+						<td class="numeric">$2.65</td>
+						<td class="numeric">40,000</td>
+					</tr>
+					<tr>
+						<td>AMC</td>
+						<td>AMCOR LIMITED</td>
+						<td class="numeric">$6.85</td>
+						<td class="numeric">-0.03</td>
+						<td class="numeric">-0.36%</td>
+						<td class="numeric">$6.90</td>
+						<td class="numeric">$6.91</td>
+						<td class="numeric">$6.83</td>
+						<td class="numeric">878,267</td>
+					</tr>
+					<tr>
+						<td>AMM</td>
+						<td>AMCOM TELECOMMUNICATIONS LIMITED</td>
+						<td class="numeric">$1.01</td>
+						<td class="numeric">  +0.01</td>
+						<td class="numeric">1.00%</td>
+						<td class="numeric">$1.00</td>
+						<td class="numeric">$1.01</td>
+						<td class="numeric">$0.99</td>
+						<td class="numeric">41,759</td>
+					</tr>
+					<tr>
+						<td>AMP</td>
+						<td>AMP LIMITED</td>
+						<td class="numeric">$3.97</td>
+						<td class="numeric">-0.07</td>
+						<td class="numeric">-1.73%</td>
+						<td class="numeric">$4.02</td>
+						<td class="numeric">$4.04</td>
+						<td class="numeric">$3.97</td>
+						<td class="numeric">10,584,657</td>
+					</tr>
+					<tr>
+						<td>AMX</td>
+						<td>AMPELLA MINING LIMITED</td>
+						<td class="numeric">$1.35</td>
+						<td class="numeric">0.00</td>
+						<td class="numeric">0.00%</td>
+						<td class="numeric">$1.36</td>
+						<td class="numeric">$1.36</td>
+						<td class="numeric">$1.34</td>
+						<td class="numeric">157,918</td>      
+					</tr>     
+				</tbody>
+		  </table>
+	  </section>
+    </div> <!-- /container -->
+
+    <script src="assets/js/jquery-1.7.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
